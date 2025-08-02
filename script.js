@@ -104,61 +104,61 @@ document.addEventListener('DOMContentLoaded', () => {
 // for success-story-page and our-services page text bubble animation 
 
 
-function wrapLetters(selector) {
-  const elements = document.querySelectorAll(selector);
+// function wrapLetters(selector) {
+//   const elements = document.querySelectorAll(selector);
 
-  elements.forEach(element => {
-    const childNodes = Array.from(element.childNodes);
+//   elements.forEach(element => {
+//     const childNodes = Array.from(element.childNodes);
 
-    childNodes.forEach(node => {
-      if (node.nodeType === Node.TEXT_NODE) {
-        const chars = node.textContent.split('');
-        const fragment = document.createDocumentFragment();
+//     childNodes.forEach(node => {
+//       if (node.nodeType === Node.TEXT_NODE) {
+//         const chars = node.textContent.split('');
+//         const fragment = document.createDocumentFragment();
 
-        chars.forEach(char => {
-          const span = document.createElement('span');
-          span.className = 'letter';
-          span.textContent = char;
-          fragment.appendChild(span);
-        });
+//         chars.forEach(char => {
+//           const span = document.createElement('span');
+//           span.className = 'letter';
+//           span.textContent = char;
+//           fragment.appendChild(span);
+//         });
 
-        element.replaceChild(fragment, node);
-      } else if (node.nodeType === Node.ELEMENT_NODE) {
-        wrapLettersFromNode(node); // recursive
-      }
-    });
-  });
-}
+//         element.replaceChild(fragment, node);
+//       } else if (node.nodeType === Node.ELEMENT_NODE) {
+//         wrapLettersFromNode(node); // recursive
+//       }
+//     });
+//   });
+// }
 
-function wrapLettersFromNode(node) {
-  const childNodes = Array.from(node.childNodes);
+// function wrapLettersFromNode(node) {
+//   const childNodes = Array.from(node.childNodes);
 
-  childNodes.forEach(child => {
-    if (child.nodeType === Node.TEXT_NODE) {
-      const chars = child.textContent.split('');
-      const fragment = document.createDocumentFragment();
+//   childNodes.forEach(child => {
+//     if (child.nodeType === Node.TEXT_NODE) {
+//       const chars = child.textContent.split('');
+//       const fragment = document.createDocumentFragment();
 
-      chars.forEach(char => {
-        const span = document.createElement('span');
-        span.className = 'letter';
-        span.textContent = char;
-        fragment.appendChild(span);
-      });
+//       chars.forEach(char => {
+//         const span = document.createElement('span');
+//         span.className = 'letter';
+//         span.textContent = char;
+//         fragment.appendChild(span);
+//       });
 
-      node.replaceChild(fragment, child);
-    } else if (child.nodeType === Node.ELEMENT_NODE) {
-      wrapLettersFromNode(child); // deep recursive
-    }
-  });
-}
+//       node.replaceChild(fragment, child);
+//     } else if (child.nodeType === Node.ELEMENT_NODE) {
+//       wrapLettersFromNode(child); // deep recursive
+//     }
+//   });
+// }
 
-// ⬇️ Apply on new and old sections
-wrapLetters('.title-our-success-story');
-wrapLetters('.our-success-story-subtitle');
-wrapLetters('.our-success-story-subtitle-2');
-wrapLetters('.our-success-story-subtitle-3');
-wrapLetters('.title-our-services');
-wrapLetters('.title-our-services-desc');
+// // ⬇️ Apply on new and old sections
+// wrapLetters('.title-our-success-story');
+// wrapLetters('.our-success-story-subtitle');
+// wrapLetters('.our-success-story-subtitle-2');
+// wrapLetters('.our-success-story-subtitle-3');
+// wrapLetters('.title-our-services');
+// wrapLetters('.title-our-services-desc');
 
 
 
@@ -431,38 +431,38 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 // home-page hero-text animation
-gsap.registerPlugin(TextPlugin);
+// gsap.registerPlugin(TextPlugin);
 
-document.addEventListener("DOMContentLoaded", () => {
-  const line1 = document.getElementById("typingLine1");
-  const line2 = document.getElementById("typingLine2");
-  const line3 = document.getElementById("typingLine3");
+// document.addEventListener("DOMContentLoaded", () => {
+//   const line1 = document.getElementById("typingLine1");
+//   const line2 = document.getElementById("typingLine2");
+//   const line3 = document.getElementById("typingLine3");
 
-  // Reset text
-  line1.textContent = "";
-  line2.textContent = "";
-  line3.textContent = "";
+//   // Reset text
+//   line1.textContent = "";
+//   line2.textContent = "";
+//   line3.textContent = "";
 
-  const tl = gsap.timeline();
+//   const tl = gsap.timeline();
 
-  tl.to(line1, {
-    duration: 2,
-    text: "Eagle Eye",
-    // ease: "power1.inOut",
-  })
-    .to(line2, {
-      duration: 2,
-      text: "We Are The",
-      ease: "power1.inOut",
-      delay: 0.3,
-    })
-    .to(line3, {
-      duration: 2,
-      text: "Brand Riser",
-      ease: "power1.inOut",
-      delay: 0.3,
-    });
-});
+//   tl.to(line1, {
+//     duration: 2,
+//     text: "Eagle Eye",
+//     // ease: "power1.inOut",
+//   })
+//     .to(line2, {
+//       duration: 2,
+//       text: "We Are The",
+//       ease: "power1.inOut",
+//       delay: 0.3,
+//     })
+//     .to(line3, {
+//       duration: 2,
+//       text: "Brand Riser",
+//       ease: "power1.inOut",
+//       delay: 0.3,
+//     });
+// });
 
 
 
@@ -493,37 +493,65 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // home-page cta-section text-typing animation
 
+  // gsap.registerPlugin(ScrollTrigger);
+
+  // const headingText = "Let's Work Together.";
+  // const paragraphText = "Ready to bring your vision to life? Partner with us to create impactful, creative solutions that drive real results. Let’s build something great together.";
+
+  // const headingEl = document.querySelector('.cta-heading');
+  // const paragraphEl = document.querySelector('.cta-subtext');
+
+  // function typeEffect(element, text, speed = 20, callback) {
+  //   let i = 0;
+  //   function typing() {
+  //     if (i < text.length) {
+  //       element.textContent += text.charAt(i);
+  //       i++;
+  //       setTimeout(typing, speed);
+  //     } else if (callback) {
+  //       callback();
+  //     }
+  //   }
+  //   typing();
+  // }
+
+  // ScrollTrigger.create({
+  //   trigger: ".cta-section",
+  //   start: "top 80%",
+  //   once: true, // only once
+  //   onEnter: () => {
+  //     typeEffect(headingEl, headingText, 50, () => {
+  //       setTimeout(() => {
+  //         typeEffect(paragraphEl, paragraphText, 25);
+  //       }, 300);
+  //     });
+  //   }
+  // });
+
+
+
   gsap.registerPlugin(ScrollTrigger);
 
-  const headingText = "Let's Work Together.";
-  const paragraphText = "Ready to bring your vision to life? Partner with us to create impactful, creative solutions that drive real results. Let’s build something great together.";
+const emailInput = document.getElementById('cta-email');
+const placeholderText = "Eagleeye.sindh.pk@gmail.com";
 
-  const headingEl = document.querySelector('.cta-heading');
-  const paragraphEl = document.querySelector('.cta-subtext');
-
-  function typeEffect(element, text, speed = 20, callback) {
-    let i = 0;
-    function typing() {
-      if (i < text.length) {
-        element.textContent += text.charAt(i);
-        i++;
-        setTimeout(typing, speed);
-      } else if (callback) {
-        callback();
-      }
+function typePlaceholder(element, text, speed = 50) {
+  let i = 0;
+  function typing() {
+    if (i <= text.length) {
+      element.setAttribute('placeholder', text.substring(0, i));
+      i++;
+      setTimeout(typing, speed);
     }
-    typing();
   }
+  typing();
+}
 
-  ScrollTrigger.create({
-    trigger: ".cta-section",
-    start: "top 80%",
-    once: true, // only once
-    onEnter: () => {
-      typeEffect(headingEl, headingText, 50, () => {
-        setTimeout(() => {
-          typeEffect(paragraphEl, paragraphText, 25);
-        }, 300);
-      });
-    }
-  });
+ScrollTrigger.create({
+  trigger: ".cta-form",
+  start: "top 80%",
+  once: true,
+  onEnter: () => {
+    typePlaceholder(emailInput, placeholderText, 60);
+  }
+});

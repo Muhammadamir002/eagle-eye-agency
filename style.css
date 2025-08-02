@@ -15,7 +15,7 @@ body {
 
 .container {
   width: 100%;
-  max-width: 1150px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -48,7 +48,7 @@ body {
 /* Header */
 .header {
   background-color: #FFFFFF;
-  padding: 24px;
+  padding: 10px;
 }
 
 .inner-header {
@@ -61,7 +61,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: 30px;
+    padding-top: 25px;
 }
 
 .navbar-logo {
@@ -101,43 +101,17 @@ body {
 }
 
 .navbar-button {
-  position: relative;
   text-decoration: none;
-  background-color: #F5BF21;
-  color: #000;
-  font-size: 16px;
-  font-weight: 500;
-  padding: 5px 5px 5px 15px;
-  border-radius: 9999px;
-  overflow: hidden;
-  transition: color 0.3s ease;
-  z-index: 1;
+    background-color: #F5BF21;
+    color: #000000;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 5px 5px 5px 15px;
 }
 
-/* Background animation */
-.navbar-button::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: #FFFFFF;
-  transform: scaleX(0);
-  transform-origin: 100% 50%; /* right to left */
-  transition: transform 0.5s ease-out;
-  border-radius: 9999px;
-}
-
-.navbar-button:hover::before {
-  transform: scaleX(1);
-}
-
-
-/* .navbar-button:hover {
+.navbar-button:hover {
   background-color: #FFFFFF;
-} */
+}
 
 .navbar-button span {
   background-color: black;
@@ -160,40 +134,18 @@ body {
 
 
 .btn--secondary {
-  position: relative;
-  text-decoration: none;
-  background-color: #F5BF21;
-  color: #000;
-  font-size: 16px;
-  font-weight: 500;
-  padding: 5px 5px 5px 15px;
-  margin: 50px 0px;
-  border-radius: 9999px;
-  overflow: hidden;
-  transition: color 0.3s ease;
-  z-index: 1;
+    text-decoration: none;
+    background-color: #F5BF21;
+    color: #1a202c;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 5px 5px 5px 15px;
+    margin: 50px 0px;
 }
 
-/* Animated background layer */
-.btn--secondary::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: #FFFFFF;
-  transform: scaleX(0);
-  transform-origin: 100% 50%;
-  transition: transform 0.5s ease-out;
-  border-radius: 9999px;
+.btn--secondary:hover{
+  background-color: #FFFFFF;
 }
-
-.btn--secondary:hover::before {
-  transform: scaleX(1);
-}
-
 
 .btn--secondary span {
   background-color: black;
@@ -402,7 +354,7 @@ body {
 .ceo-card__actions {
   display: flex;
     justify-content: flex-start;
-    gap: 10px;
+    /* gap: 10px; */
     align-items: center;
 }
 
@@ -424,6 +376,7 @@ body {
   font-size: 14px;
   color: #A6A6A6;
   text-decoration: none;
+      margin-left: 10px;
 }
 
 .ceo-btn-2:hover {
@@ -463,7 +416,7 @@ body {
 } */
 
 .trusted-label {
-      text-align: center;
+    text-align: center;
     color: #000000;
     font-size: 18px;
     font-weight: 400;
@@ -557,47 +510,46 @@ body {
   justify-content: center;
   padding-top: 40px;
 }
-
-.foundation-card {
+ .foundation-card {
     flex: 1 1 300px;
     padding: 34px;
     border-radius: 16px;
-    background-color: #F5F5F5;
+    background-color: #f5f7fa;
     color: #070707;
     text-align: center;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease-in-out;
-}
+    cursor: pointer;
+  }
 
-.foundation-card:hover {
-  background-color: #111827;
-  color: #ffffff;
-  transform: translateY(-5px);
-}
+  .foundation-card:hover {
+    background-color: #111827;
+    color: #ffffff;
+    transform: translateY(-5px);
+  }
 
-.foundation-card h3 {
+  .foundation-card h3 {
     font-size: 30px;
     font-weight: 600;
     padding-top: 25px;
     transition: color 0.3s ease-in-out;
-}
+  }
 
-.foundation-card p {
+  .foundation-card p {
     font-size: 16px;
     font-weight: 200;
     line-height: 1.7;
     padding-top: 20px;
     transition: color 0.3s ease-in-out;
-}
+  }
 
-.foundation-card:hover h3,
-.foundation-card:hover p {
-  color: #ffffff;
-}
+  .foundation-card:hover h3,
+  .foundation-card:hover p {
+    color: #ffffff;
+  }
 
-/* Icon Box */
-.icon-box {
-  width: 60px;
+  /* Icon Box */
+  .icon-box {
+    width: 60px;
     height: 60px;
     margin: 0 auto;
     background-color: #000000;
@@ -605,24 +557,42 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    overflow: hidden;
     transition: background-color 0.3s ease-in-out;
-}
+  }
 
-.icon-box img {
-  width: 24px;
-  height: 24px;
-  /* filter: invert(1); */
-}
+  .icon-box img {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease-in-out;
+  }
 
-icon-box:hover img {
-  filter: invert(1);
-}
+  .icon-white {
+    opacity: 1;
+    z-index: 2;
+  }
 
-/* ✅ On Card Hover - Icon Box color changes */
-.foundation-card:hover .icon-box {
-  background-color: #FFFFFF; /* bright yellow */
-}
+  .icon-black {
+    opacity: 0;
+    z-index: 1;
+  }
 
+  .foundation-card:hover .icon-box {
+    background-color: #ffffff;
+  }
+
+  .foundation-card:hover .icon-white {
+    opacity: 0;
+  }
+
+  .foundation-card:hover .icon-black {
+    opacity: 1;
+  }
 
 /* End of Foundation Section */
 
@@ -634,7 +604,7 @@ icon-box:hover img {
 }
 
 .services-container {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
@@ -662,50 +632,24 @@ icon-box:hover img {
 }
 
 .see-more-btn {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  background-color: #000000;
-  color: #FFFFFF;
-  padding: 5px 5px 5px 15px;
-  font-size: 14px;
-  font-weight: 400;
-  border-radius: 9999px;
-  text-decoration: none;
-  transition: color 0.3s ease-in-out;
-  margin-top: 25px;
-  overflow: hidden;
-  z-index: 1;
-  /* border: 2px solid #000000; */
-}
-
-/* Animated background layer */
-.see-more-btn::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: #F5BF21;
-  transform: scaleX(0);
-  transform-origin: 100% 50%; /* right to left */
-  transition: transform 0.5s ease-out;
-  border-radius: 9999px;
-}
-
-.see-more-btn:hover::before {
-  transform: scaleX(1);
+      display: inline-flex;
+    align-items: center;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 5px 5px 5px 15px;
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 9999px;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
+    margin-top: 25px;
 }
 
 
-
-
-/* .see-more-btn:hover {
+.see-more-btn:hover {
   background-color: #F5BF21;
   color: #000000;
-} */
+}
 
 .see-more-btn span {
   background-color: white;
@@ -834,8 +778,7 @@ icon-box:hover img {
 }
 
 .card-btn {
-  position: relative;
-  background-color: #FFFFFF;
+  background-color: #F5BF21;
   color: #000000;
   font-weight: 500;
   font-size: 14px;
@@ -846,35 +789,12 @@ icon-box:hover img {
   align-items: center;
   gap: 6px;
   width: fit-content;
-  overflow: hidden;
-  transition: color 0.3s ease;
-  z-index: 1;
-  /* border: 2px solid #F5BF21; */
+  transition: background-color 0.3s ease;
 }
 
-/* Animated background */
-.card-btn::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: #F5BF21;
-  transform: scaleX(0);
-  transform-origin: 100% 50%; /* left to right */
-  transition: transform 0.5s ease-out;
-  border-radius: 9999px;
+.card-btn:hover {
+  background-color: #FFFFFF;
 }
-
-.card-btn:hover::before {
-  transform: scaleX(1);
-}
-
-/* .card-btn:hover {
-  color: white;
-} */
 
 
 
@@ -991,43 +911,20 @@ icon-box:hover img {
 }
 
 .cta-form button {
-  position: relative;
-  background-color: transparent;
-  color: #000;
+  background-color: #000000;
+  color: #FFFFFF;
   padding: 18px 30px;
   font-size: 18px;
   font-weight: 500;
-  border: 2px solid #000;
+  border: none;
   margin: 5px;
   border-radius: 50px;
   cursor: pointer;
-  overflow: hidden;
-  transition: color 0.3s ease-in-out;
-  z-index: 1;
-}
-
-/* Animated background layer */
-.cta-form button::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: #111;
-  transform: scaleX(0);
-  transform-origin: 100% 50%;
-  transition: transform 0.5s ease-out;
-  border-radius: 50px;
-}
-
-.cta-form button:hover::before {
-  transform: scaleX(1);
+  transition: background-color 0.3s ease-in-out;
 }
 
 .cta-form button:hover {
-  color: #FFF;
+  background-color: #F5BF21;
 }
 
 
@@ -1046,7 +943,7 @@ icon-box:hover img {
   display: flex;
   flex-wrap: nowrap; /* ❗ Prevent wrapping to keep Contact Us in the same row */
   justify-content: space-between;
-  gap: 25px;
+  gap: 30px;
 }
 
 .footer-col {
@@ -1067,9 +964,11 @@ icon-box:hover img {
 .footer-about p {
   margin: 10px 0;
   font-size: 14px;
-  color: #ccc;
+  color: #FFFFFF;
   line-height: 1.6;
 }
+
+
 
 .footer-col h3 {
   font-size: 22px;
@@ -1084,12 +983,18 @@ icon-box:hover img {
 .footer-col p {
   font-size: 14px;
   margin-top: 15px;
-  color: #ddd;
+  color: #FFFFFF;
 }
 
 .footer-col p:hover{
   cursor: pointer;
   color: #F5BF21;
+}
+
+
+.footer-about p:hover{
+  cursor: default;
+   color: #FFFFFF;
 }
 
 .social-icons {
@@ -1119,7 +1024,7 @@ icon-box:hover img {
   justify-content: space-between;
   flex-wrap: wrap;
   font-size: 15px;
-  color: #bbb;
+  color: #FFFFFF;
 }
 
 
@@ -1165,48 +1070,19 @@ icon-box:hover img {
 /* About-us page css */
 
 .about-us-top-btn {
-  position: relative;
   text-decoration: none;
-  background-color: #F5BF21;
-  color: #000000;
-  font-size: 16px;
-  font-weight: 500;
-  padding: 5px 15px 5px 5px;
-  margin-top: 40px;
-  border-radius: 9999px;
-  overflow: hidden;
-  transition: color 0.3s ease;
-  z-index: 1;
+    background-color: #F5BF21;
+    color: #000000;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 5px 15px 5px 5px;
+    margin-top: 40px;
 }
 
-/* Background animation layer */
-.about-us-top-btn::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: #FFFFFF;
-  transform: scaleX(0);
-  transform-origin: 0% 50%; /* for left to right */
-  transition: transform 0.5s ease-out;
-  border-radius: 9999px;
-}
-
-.about-us-top-btn:hover::before {
-  transform: scaleX(1);
-}
 
 .about-us-top-btn:hover {
-  color: #000;
-}
-
-
-/* .about-us-top-btn:hover {
   background-color: #FFFFFF;
-} */
+}
 
 .about-us-top-btn span {
   background-color: black;
@@ -1458,39 +1334,18 @@ icon-box:hover img {
 }
 
 
-.about-us-btn {
-  position: relative;
+.about-us-btn{
   text-decoration: none;
   background-color: #000000;
-  color: #FFFFFF;
-  font-size: 16px;
-  font-weight: 500;
-  padding: 5px 15px 5px 5px;
-  margin-top: 40px;
-  border-radius: 9999px;
-  overflow: hidden;
-  transition: color 0.3s ease;
-  z-index: 1;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 5px 5px 5px 15px;
 }
 
-/* Background animation layer */
-.about-us-btn::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: #F5BF21;
-  transform: scaleX(0);
-  transform-origin: 0% 50%; /* for left to right */
-  transition: transform 0.5s ease-out;
-  border-radius: 9999px;
-}
-
-.about-us-btn:hover::before {
-  transform: scaleX(1);
+.about-us-btn:hover{
+  background-color: #F5BF21;
+  color: #000;
 }
 
 
@@ -1666,38 +1521,17 @@ icon-box:hover img {
 
 
 .our-services-top-btn {
-  position: relative;
   text-decoration: none;
-  background-color: #000000;
-  color: #FFFFFF;
-  font-size: 16px;
-  font-weight: 500;
-  padding: 5px 15px 5px 5px;
-  margin-top: 40px;
-  border-radius: 9999px;
-  overflow: hidden;
-  transition: color 0.3s ease;
-  z-index: 1;
+    background-color: #000000;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 5px 15px 5px 5px;
+    margin-top: 40px;
 }
 
-/* Animated background layer */
-.our-services-top-btn::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: #F5BF21;
-  transform: scaleX(0);
-  transform-origin: 0% 50%;
-  transition: transform 0.5s ease-out;
-  border-radius: 9999px;
-}
-
-.our-services-top-btn:hover::before {
-  transform: scaleX(1);
+.our-services-top-btn:hover{
+  background-color: #F5BF21;
 }
 
 
@@ -1734,7 +1568,7 @@ icon-box:hover img {
     font-weight: 200;
     color: rgb(0, 0, 0);
     margin-top: 25px;
-    width: 85%;
+    width: 80%;
     white-space: pre-wrap; /* preserve spacing */
 }
 
@@ -1746,7 +1580,7 @@ icon-box:hover img {
     flex-wrap: wrap;
     gap: 30px;
     justify-content: flex-start;
-    width: 90%;
+    width: 85%;
     padding: 70px 0px 110px 0px;
 }
 
@@ -1758,7 +1592,6 @@ icon-box:hover img {
   font-size: 22px;
   font-weight: 500;
   white-space: nowrap;
-  font-family: 'Bricolage Grotesque', sans-serif;
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
@@ -1870,8 +1703,7 @@ icon-box:hover img {
 }
 
 .grid-item img:hover{
-  transform: scale(1.01);
-  box-shadow: 0 6px 16px rgba(255, 234, 0, 0.4);
+  box-shadow: 0 6px 16px rgba(174, 173, 160, 0.4);
 }
 
 
@@ -1884,7 +1716,7 @@ icon-box:hover img {
   bottom: 20px;
   right: 20px;
   background-color: #000000;
-  padding: 15px;
+  padding: 10px;
   border-radius: 50px;
   text-decoration: none;
   box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
@@ -1899,8 +1731,9 @@ icon-box:hover img {
 }
 
 .go-home-btn img {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
+ animation: blink-move-down 1s infinite ease-in-out;
 }
 
 .go-home-btn.visible {
@@ -1909,6 +1742,21 @@ icon-box:hover img {
   pointer-events: auto;
 }
 
+
+@keyframes blink-move-down {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 0;
+    transform: translateY(10px); /* adjust for how far down it moves */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 
 
