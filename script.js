@@ -1,4 +1,25 @@
 // for index page
+
+//for toggle btn of responsive devices
+document.addEventListener('DOMContentLoaded', () => {
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('.navbar-menu');
+  const contactButton = document.querySelector('.navbar-button');
+  const navbar = document.querySelector('.navbar');
+
+  if (menuToggle) {
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('menu-open');
+      contactButton.classList.toggle('menu-open');
+      menuToggle.classList.toggle('is-active');
+      navbar.classList.toggle('nav-expanded');
+    });
+  }
+});
+
+
+
+
 // fade-in animation 
 document.addEventListener('DOMContentLoaded', () => {
     const initFadeInObserver = () => {

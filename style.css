@@ -130,6 +130,39 @@ body {
 }
 
 
+
+
+/* Mobile Menu Toggle Button */
+.menu-toggle {
+  display: none; /* Hidden by default, shown on smaller screens */
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  z-index: 1001; /* Above other navbar elements */
+}
+
+.menu-toggle .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #FFFFFF;
+  transition: all 0.3s ease;
+}
+
+/* Animation for menu toggle icon */
+.menu-toggle.is-active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.is-active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle.is-active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+
+
 /* navbar complete at this line */
 
 
@@ -388,9 +421,26 @@ body {
     top: 660px;
     right: 450px;
 }
+
+
+.card-bottom-angle .cd-circle {
+       position: relative;
+    right: -5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
 .card-bottom-angle .cd-btm-2 {
+  /* position: relative;
+  right: -10px; */
+  z-index: 900;
+}
+.card-bottom-angle .cd-btm-3 {
   position: relative;
-  right: -10px;
+  right: 13px;
    animation: blink 1s infinite;
   z-index: 1000;
 }
@@ -1780,3 +1830,833 @@ body {
 
 
 
+
+/* --- Responsive Design --- */
+
+/* For screens smaller than 1024px (e.g., larger tablets, small laptops) */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .navbar-menu {
+        gap: 20px;
+    }
+
+    .hero {
+        flex-direction: column;
+        padding: 0 20px;
+        /* text-align: center; */
+    }
+
+    .hero__left {
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .hero__title {
+        font-size: 80px;
+        margin-top: 30px;
+        position: static; /* Remove absolute positioning for better flow */
+    }
+
+    .brand-riser {
+        margin-left: 30;
+        display: block; /* Ensure it takes full width */
+    }
+
+    /* .head-badge-left,
+    .badge-right {
+        position: static; /* Remove absolute positioning 
+        transform: none;
+        margin: 10px auto;
+        display: inline-block;
+    } */
+
+    .hero__subtitle,
+    .hero__description {
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .btn--secondary {
+        margin: 30px auto;
+    }
+
+    .hero__right {
+        width: 100%;
+        justify-content: center;
+        margin-top: 40px;
+    }
+
+    .ceo-image {
+        width: 100%;
+        max-width: 500px; /* Limit max width for larger screens */
+        position: static;
+        left: auto;
+    }
+
+    .ceo-card {
+        position: static; /* Remove absolute positioning */
+        margin: 20px auto;
+        right: auto;
+        bottom: auto;
+        width: 80%; /* Adjust width for better fit */
+        max-width: 300px;
+    }
+
+    .card-bottom-angle {
+        position: static;
+        top: auto;
+        right: auto;
+        margin-top: 20px;
+        /* display: flex;
+        justify-content: center;
+        align-items: center; */
+    }
+
+    .footer-container {
+        flex-wrap: wrap; /* Allow wrapping on smaller screens */
+        justify-content: center;
+        text-align: center;
+    }
+
+    .footer-col {
+        min-width: unset; /* Remove min-width constraint */
+        width: 100%; /* Take full width on smaller screens */
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+
+    .footer-about {
+        margin-right: 0;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+
+    .footer-bottom {
+        gap: 10px;
+    }
+
+    /* About Us Page */
+    .about-us-hero {
+        flex-direction: column;
+        /* text-align: center; */
+    }
+
+    .about-us-hero-right {
+        width: 100%;
+        justify-content: center;
+        margin-top: 40px;
+    }
+
+    .about-us-hero-right .ceo-image {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .about-us-head-badge-top,
+    .about-us-head-badge-left,
+    .about-us-head-badge-right {
+        position: static;
+        transform: none;
+        margin: 10px auto;
+        display: inline-block;
+    }
+
+    .title-about-us,
+    .about-us-hero-title,
+    .about-us-subtitle,
+    .about-us-subtitle-description {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .sec-about-us-bottom {
+        gap: 20px;
+    }
+
+    /* Services Page */
+    .title-our-services,
+    .title-our-services-desc {
+        width: 100%;
+    }
+    .sec-our-services-btns {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Brand Pages */
+    .activity-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjust minmax for smaller screens */
+    }
+    .grid-item img {
+        width: 100%;
+        height: auto;
+        max-height: 400px; /* Limit height */
+    }
+}
+
+/* For screens smaller than 768px (e.g., tablets portrait, larger phones) */
+@media (max-width: 768px) {
+
+
+    .navbar {
+    padding: 15px 20px;
+    flex-wrap: wrap; /* Allow items to wrap */
+    position: relative;
+    z-index: 100;
+  }
+
+  .navbar-menu {
+    display: none; /* Hide by default on small screens */
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    background-color: wheat; /* Background for dropdown menu */
+    position: absolute;
+    top: 100%; /* Position below navbar */
+    left: 0;
+    padding: 20px 0px 60px 0px;;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 999;
+  }
+
+  .navbar-menu.menu-open {
+    display: flex; /* Show when menu-open class is active */
+    animation: slideDown 0.3s ease-out forwards;
+  }
+
+  .navbar-menu li {
+    margin: 10px 0;
+  }
+
+  .navbar-button {
+    display: none; /* Hide by default */
+    text-align: center;
+    background-color: #F5BF21;
+    position: absolute;
+    top: calc(100% + 150px); /* Adjust based on navbar-menu height */
+    left: 308px;
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 999;
+  }
+
+  .navbar-button.menu-open {
+    display: flex; /* Show when menu-open class is active */
+    animation: slideDown 0.3s ease-out forwards;
+    top: calc(100% + 180px);
+  }
+
+  .navbar.nav-expanded .navbar-button {
+    top: calc(100% + 285px); /* Adjust as needed */
+  }
+
+  .navbar-button {
+      font-size: 14px;
+      padding: 4px 4px 4px 14px;
+      margin: 15px auto;
+  }
+
+   .navbar-button span {
+        width: 35px;
+        height: 35px;
+    }
+
+    .navbar-button span img {
+        width: 20px;
+        height: 20px;
+    } 
+
+  .menu-toggle {
+    display: flex; /* Show toggle button */
+  }
+
+
+  
+
+    .hero__title {
+        font-size: 60px;
+    }
+
+    .hero__subtitle,
+    .hero__description {
+        font-size: 18px;
+    }
+
+    .btn--secondary {
+        font-size: 14px;
+        padding: 4px 4px 4px 12px;
+    }
+
+    .btn--secondary span {
+        width: 35px;
+        height: 35px;
+    }
+
+    .btn--secondary span img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .foundation-section {
+        height: auto; /* Allow height to adjust based on content */
+        padding-bottom: 50px;
+    }
+
+    .foundation-heading {
+        font-size: 32px;
+    }
+
+    .foundation-subheading {
+        font-size: 14px;
+    }
+
+    .foundation-cards {
+        flex-direction: column; /* Stack cards vertically */
+        gap: 20px;
+    }
+
+    .foundation-card {
+        flex: 1 1 100%; /* Take full width */
+        padding: 25px;
+    }
+
+    .services-text h2 {
+        font-size: 32px;
+    }
+
+    .services-text p {
+        font-size: 18px;
+    }
+
+    .extension-grid {
+        grid-template-columns: 1fr; /* Single column for brand cards */
+    }
+
+    .extension-card {
+        height: 280px; /* Adjust height for smaller screens */
+        padding: 20px;
+    }
+
+    .card-title {
+        font-size: 32px;
+    }
+
+    .cta-heading {
+        font-size: 45px;
+    }
+
+    .cta-subtext {
+        font-size: 16px;
+    }
+
+    .cta-form {
+        flex-direction: column; /* Stack form elements */
+        max-width: 90%;
+        border-radius: 10px;
+    }
+
+    .cta-form input[type="email"] {
+        border-radius: 10px;
+        text-align: center;
+        padding: 15px 20px;
+    }
+
+    .cta-form button {
+        border-radius: 10px;
+        width: calc(100% - 10px); /* Adjust width to fit container with margin */
+        margin: 5px;
+        padding: 15px 20px;
+    }
+
+    .footer {
+        padding: 40px 20px;
+    }
+
+    .footer-col {
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+    /* About Us Page */
+    .title-about-us {
+        font-size: 40px;
+    }
+
+    .about-us-hero-title {
+        font-size: 55px;
+    }
+
+    .about-us-subtitle {
+        font-size: 24px;
+    }
+
+    .about-us-subtitle-description {
+        font-size: 20px;
+    }
+
+    .testimonial-box {
+        gap: 10px;
+        margin: 40px auto;
+        text-align: center;
+    }
+
+    .avatars {
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+
+    .sec-about-us-desc-head {
+        font-size: 32px;
+    }
+
+    .sec-about-us-desc-head-desciption {
+        font-size: 24px;
+    }
+
+    /* Success Story Page */
+    .title-our-success-story {
+        font-size: 50px;
+    }
+
+    .our-success-story-subtitle,
+    .our-success-story-subtitle-2,
+    .our-success-story-subtitle-3 {
+        font-size: 28px;
+        width: 100%;
+    }
+
+    /* Services Page */
+    .title-our-services {
+        font-size: 50px;
+    }
+
+    .title-our-services-desc {
+        font-size: 28px;
+    }
+
+    .sec-our-services-btns {
+        padding: 40px 0px 80px 0px;
+    }
+
+    .services-btn {
+        font-size: 18px;
+        padding: 15px 20px;
+    }
+
+    /* Go Home Button */
+    .go-home-btn {
+        padding: 8px;
+        bottom: 15px;
+        right: 15px;
+    }
+    .go-home-btn img {
+        width: 30px;
+        height: 30px;
+    }
+
+}
+
+/* For screens smaller than 480px (e.g., small mobile devices) */
+@media (max-width: 480px) {
+
+    .navbar-logo {
+        font-size: 18px;
+    }
+
+    .navbar-menu{
+      padding: 45px 0px 75px 0px;
+    }
+
+    .navbar.nav-expanded .navbar-button {
+    top: calc(100% + 315px); /* Adjust as needed */
+  }
+
+    .navbar-button{
+      left: 125px;
+    }
+ 
+
+     .navbar-button span {
+        width: 30px;
+        height: 30px;
+    }
+
+    .navbar-button span img {
+        width: 18px;
+        height: 18px;
+    } 
+
+    .hero{
+      gap: 0px;
+    }
+
+    .hero__left{
+      margin-bottom: 0px;
+    }
+
+    .hero__right{
+      margin-top: 0px;
+    }
+
+    .hero__title {
+        font-size: 50px;
+    }
+
+    .brand-riser{
+      margin-left: 30px;
+    }
+
+    .hero__subtitle,
+    .hero__description {
+        font-size: 16px;
+    }
+
+    .head-badge-left{
+      padding: 4px 8px;
+        font-size: 14px;
+        top: -55px;
+        left: 50px;
+    }
+
+    .head-badge-left p{
+      font-size: 10px;
+    }
+
+    .btn--secondary{
+      font-size: 12px;
+      padding: 3px 3px 3px 12px;
+    }
+
+    .btn--secondary span {
+      width: 30px;
+      height: 30px;
+    }
+
+    .btn--secondary span img {
+      width: 20px;
+      height: 20px;
+
+    }
+
+    .badge-right {
+      padding: 4px 8px;
+        font-size: 9px;
+        top: 360px;
+        left: 145px;
+    }
+
+    .ceo-image{
+      position: relative;
+      left: 120px;
+    }
+
+    .ceo-card {
+        position: relative;
+        right: 230px;
+        bottom: 0px;
+        width: 100%;
+        height: 170px;
+        max-width: 300px;
+        padding: 10px;
+    }
+
+    .card-title-icon{
+      gap: 15px;
+    }
+
+    .ceo-card-icon{
+      width: 50px;
+    }
+    .ceo-card__name {
+        font-size: 22px;
+    }
+
+    .ceo-btn-1, .ceo-btn-2 {
+        font-size: 10px;
+    }
+
+    .card-bottom-angle{
+      position: relative;
+        top: 165px;
+        right: 290px;
+    }
+
+    .card-bottom-angle .cd-btm-1{
+      width: 35px;
+    }
+
+    .trusted-label {
+        font-size: 16px;
+        padding-bottom: 20px;
+    }
+
+    .logo-track img {
+        max-height: 60px;
+        max-width: 100px;
+    }
+
+    .foundation-heading {
+        font-size: 28px;
+    }
+
+    .foundation-subheading {
+        font-size: 13px;
+    }
+
+    .foundation-card h3 {
+        font-size: 24px;
+    }
+
+    .foundation-card p {
+        font-size: 14px;
+    }
+
+    .services-text h2 {
+        font-size: 28px;
+    }
+
+    .services-text p {
+        font-size: 16px;
+    }
+
+    .see-more-btn {
+        font-size: 12px;
+        padding: 3px 3px 3px 10px;
+    }
+
+    .see-more-btn span {
+        width: 30px;
+        height: 30px;
+    }
+
+    .see-more-btn span img {
+        width: 18px;
+        height: 18px;
+    }
+
+    .extension-heading {
+        font-size: 24px;
+    }
+
+    .extension-card {
+        height: 250px;
+    }
+
+    .card-title {
+        font-size: 28px;
+    }
+
+    .card-btn {
+        font-size: 12px;
+        padding: 3px 3px 3px 10px;
+    }
+
+    .card-btn span {
+        width: 30px;
+        height: 30px;
+    }
+
+    .card-btn span img {
+        width: 18px;
+        height: 18px;
+    }
+
+    .cta-heading {
+        font-size: 35px;
+    }
+
+    .cta-subtext {
+        font-size: 14px;
+        padding: 15px 15px 30px;
+    }
+
+    .cta-form input[type="email"],
+    .cta-form button {
+        font-size: 16px;
+        padding: 12px 15px;
+    }
+
+    .footer {
+        padding: 30px 15px;
+    }
+
+    .footer-col h3 {
+        font-size: 20px;
+    }
+
+    .footer-col p,
+    .footer-bottom {
+        font-size: 13px;
+    }
+
+    .social-icons a img {
+        width: 40px;
+        height: 40px;
+        margin-top: 30px;
+    }
+
+    /* About Us Page */
+    .title-about-us {
+        font-size: 35px;
+    }
+
+    .about-us-hero-title {
+        font-size: 45px;
+    }
+
+    .about-us-subtitle {
+        font-size: 20px;
+    }
+
+    .about-us-subtitle-description {
+        font-size: 18px;
+        margin-top: 20px;
+    }
+
+    .testimonial-box {
+        padding: 10px;
+    }
+
+    .avatar {
+        width: 50px;
+        height: 50px;
+    }
+
+    .star img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .text {
+        font-size: 16px;
+    }
+
+    .about-us-hero-right .ceo-image{
+      position: relative;
+        left: 5px;
+        width: 100%;
+    }
+    
+
+    .sec-about-us-desc-head {
+        font-size: 28px;
+    }
+
+    .sec-about-us-desc-head-desciption {
+        font-size: 20px;
+        margin-top: 20px;
+        
+    }
+
+    .about-us-btn {
+        font-size: 10px;
+        padding: 4px 4px 4px 12px;
+    }
+
+    .about-us-btn span {
+        width: 35px;
+        height: 35px;
+    }
+
+    .about-us-btn span img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .sec-about-us-bottom-logo {
+        width: 200px;
+    }
+
+    /* Success Story Page */
+    .title-our-success-story {
+        font-size: 40px;
+    }
+
+    .our-success-story-subtitle,
+    .our-success-story-subtitle-2,
+    .our-success-story-subtitle-3 {
+        font-size: 24px;
+    }
+
+    .sec-our-success-story-bottom{
+      flex-direction: column;
+        padding: 0px 0px 40px 0px;
+    }
+
+    /* Services Page */
+    .title-our-services {
+        font-size: 40px;
+    }
+
+    .title-our-services-desc {
+        font-size: 24px;
+    }
+
+    .services-btn {
+        font-size: 16px;
+        padding: 12px 18px;
+    }
+
+    .brand-activity {
+        padding: 40px 15px;
+    }
+
+    .activity-header h2 {
+        font-size: 25px;
+    }
+
+    .activity-header p {
+        font-size: 12px;
+    }
+
+    .go-back-btn {
+        font-size: 12px;
+        padding: 4px 12px 4px 4px;
+    }
+
+    .go-back-btn span {
+        width: 30px;
+        height: 30px;
+    }
+
+    .go-back-btn span img {
+        width: 18px;
+        height: 18px;
+    }
+
+    .activity-grid {
+        gap: 20px;
+    }
+
+    .grid-item {
+        height: 350px;
+    }
+
+    .grid-item img {
+        max-height: 350px;
+    }
+}
+
+
+
+
+
+/* Animation for mobile menu dropdown */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
