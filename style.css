@@ -2004,30 +2004,32 @@ body {
 /* For screens smaller than 768px (e.g., tablets portrait, larger phones) */
 @media (max-width: 768px) {
 
-
-    .navbar {
+ .navbar {
     padding: 15px 20px;
-    flex-wrap: wrap; /* Allow items to wrap */
+    flex-wrap: wrap;
     position: relative;
     z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .navbar-menu {
-    display: none; /* Hide by default on small screens */
+    display: none;
     flex-direction: column;
     width: 100%;
     text-align: center;
-    background-color: wheat; /* Background for dropdown menu */
+    background-color: #000000;
     position: absolute;
-    top: 100%; /* Position below navbar */
+    top: 100%;
     left: 0;
-    padding: 20px 0px 60px 0px;;
+    padding: 20px 0 60px 0;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     z-index: 999;
   }
 
   .navbar-menu.menu-open {
-    display: flex; /* Show when menu-open class is active */
+    display: flex;
     animation: slideDown 0.3s ease-out forwards;
   }
 
@@ -2035,48 +2037,53 @@ body {
     margin: 10px 0;
   }
 
+  /* ✅ Show button inline, no toggle needed */
   .navbar-button {
-    display: none; /* Hide by default */
-    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     background-color: #F5BF21;
-    position: absolute;
-    top: calc(100% + 150px); /* Adjust based on navbar-menu height */
-    left: 308px;
-    padding: 15px 0;
+    font-size: 12px;
+    padding: 2px 2px 2px 8px;
+    border-radius: 25px;
+    margin: 0;
+    text-decoration: none;
+    color: black;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    z-index: 999;
+    position: static; /* ✅ No absolute positioning */
   }
 
-  .navbar-button.menu-open {
-    display: flex; /* Show when menu-open class is active */
-    animation: slideDown 0.3s ease-out forwards;
-    top: calc(100% + 180px);
+  .navbar-button span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    margin-left: 10px;
+    background: black;
+    border-radius: 50%;
   }
 
-  .navbar.nav-expanded .navbar-button {
-    top: calc(100% + 285px); /* Adjust as needed */
+  .navbar-button span img {
+    width: 20px;
+    height: 20px;
   }
 
-  .navbar-button {
-      font-size: 14px;
-      padding: 4px 4px 4px 14px;
-      margin: 15px auto;
-  }
-
-   .navbar-button span {
-        width: 35px;
-        height: 35px;
-    }
-
-    .navbar-button span img {
-        width: 20px;
-        height: 20px;
-    } 
-
+  /* ✅ Toggle stays visible */
   .menu-toggle {
-    display: flex; /* Show toggle button */
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
   }
 
+  /* ✅ Container for toggle and button inline */
+  .navbar-right {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    gap: 10px;
+  }
 
   
 
@@ -2135,8 +2142,16 @@ body {
         font-size: 18px;
     }
 
+
+    .extension-section{
+      padding-top: 0px;
+    }
     .extension-grid {
         grid-template-columns: 1fr; /* Single column for brand cards */
+    }
+
+    .grid-item{
+      height: 400px;
     }
 
     .extension-card {
@@ -2157,9 +2172,8 @@ body {
     }
 
     .cta-form {
-        flex-direction: column; /* Stack form elements */
         max-width: 90%;
-        border-radius: 10px;
+        flex-wrap: nowrap;
     }
 
     .cta-form input[type="email"] {
@@ -2169,14 +2183,16 @@ body {
     }
 
     .cta-form button {
-        border-radius: 10px;
         width: calc(100% - 10px); /* Adjust width to fit container with margin */
         margin: 5px;
-        padding: 15px 20px;
     }
 
     .footer {
         padding: 40px 20px;
+    }
+
+    .footer-container{
+      text-align: left;
     }
 
     .footer-col {
@@ -2279,9 +2295,9 @@ body {
     top: calc(100% + 315px); /* Adjust as needed */
   }
 
-    .navbar-button{
+    /* .navbar-button{
       left: 125px;
-    }
+    } */
  
 
      .navbar-button span {
@@ -2394,7 +2410,7 @@ body {
     }
 
     .trusted-label {
-        font-size: 16px;
+        font-size: 18px;
         padding-bottom: 20px;
     }
 
@@ -2412,11 +2428,19 @@ body {
     }
 
     .foundation-card h3 {
-        font-size: 24px;
+        font-size: 28px;
     }
 
     .foundation-card p {
-        font-size: 14px;
+        font-size: 18px;
+    }
+
+    .services-container{
+      flex-direction: column-reverse;
+    }
+
+    .services-text{
+      flex: none;
     }
 
     .services-text h2 {
@@ -2424,7 +2448,8 @@ body {
     }
 
     .services-text p {
-        font-size: 16px;
+        font-size: 14px;
+        padding: 0px 16px;
     }
 
     .see-more-btn {

@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (menuToggle) {
     menuToggle.addEventListener('click', () => {
       navLinks.classList.toggle('menu-open');
-      contactButton.classList.toggle('menu-open');
+      // contactButton.classList.toggle('menu-open');
       menuToggle.classList.toggle('is-active');
       navbar.classList.toggle('nav-expanded');
     });
